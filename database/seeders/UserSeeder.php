@@ -15,7 +15,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //superadmin
         $superadmin = User::firstOrNew(
         [
             'email' => 'superadmin@demo.test',
@@ -28,26 +27,6 @@ class UserSeeder extends Seeder
         if (!$superadmin->exists) {
             $superadmin->save();
             $superadmin->assignRole('superadmin');
-        }
-
-        //supervisor
-        $spv = Supervisi::create([
-            'email' => 'supervisirole@demo.test',
-            'nama' => 'Supervisi'
-        ]);
-
-        $spv = User::firstOrNew(
-        [
-            'email' => 'supervisirole@demo.test',
-        ],
-            [
-            'name' => 'Supervisor',
-            'password' => bcrypt('12345678'),
-        ]);
-
-        if (!$spv->exists) {
-            $spv->save();
-            $spv->assignRole('supervisi');
         }
     }
 }

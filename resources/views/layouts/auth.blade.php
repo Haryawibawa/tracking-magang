@@ -86,6 +86,8 @@
 
     <!-- Main JS -->
     <script src="../../assets/js/main.js"></script>
+    <script src="{{url('js/content.js')}}"></script>
 
     <!-- Page JS -->
     <script src="../../assets/js/pages-auth.js"></script>
+    @yield('page_script')

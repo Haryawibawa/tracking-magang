@@ -1,3 +1,3 @@
 @include('vue.header')
-@yield('login') 
+@yield('content') 
 @include('vue.footer')

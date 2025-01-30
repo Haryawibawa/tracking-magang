@@ -21,5 +21,20 @@ Route::get('/', function () {
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Auth::routes();
+Route::middleware('auth')->group(function () {
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::prefix('/super-admin')->middleware('can:only.superadmin')->group(function () {
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('super.home');
+
+    });
+
+    Route::prefix('/spv')->middleware('can:only.supervisor')->group(function () {
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('super.home');
+
+    });
+    Route::prefix('/mahasiswa')->middleware('can:only.mahasiswa')->group(function () {
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('super.home');
+
+    });
+});
+

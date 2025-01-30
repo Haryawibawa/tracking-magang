@@ -77,7 +77,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .bg-menu-theme.menu-vertical .menu-item.active>.menu-link:not(.menu-toggle) {
-            background: #0e8c4f !important;
+            background: #b6252a !important;
             box-shadow: none !important;
             color: #fff !important;
         }
@@ -151,6 +151,7 @@
           <div class="menu-inner-shadow"></div>
 
           <ul class="menu-inner py-1">
+            @can('only.mahasiswa')
             <!-- Apps & Pages -->
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Mahasiswa</span>
@@ -186,9 +187,11 @@
                     </li>
                 </ul>
             </li>
+            @endcan
+            @can('only.supervisor')
             <!-- Apps & Pages -->
             <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Administrator</span>
+              <span class="menu-header-text">Supervisor</span>
             </li>
             <li class="menu-item {{ request()->is('super-admin/dashboard*') ? 'active' : ''}}">
               <a href="" class="menu-link">
@@ -242,12 +245,79 @@
                     </li>
                 </ul>
             </li>
+            
             <li class="menu-item {{ request()->is('super-admin/data-pegawai*') ? 'active' : ''}}">
               <a href="/super-admin/data-pegawai" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-users"></i>
                 <div data-i18n="Data Pegawai">Data Pegawai</div>
               </a>
             </li>
+            @endcan
+            @can('only.superadmin')
+            <!-- Apps & Pages -->
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Administrator</span>
+            </li>
+            <li class="menu-item {{ request()->is('super-admin/home*') ? 'active' : ''}}">
+              <a href="/super-admin/home" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-device-desktop-analytics"></i>
+                <div data-i18n="Dashboard">Dashboard</div>
+              </a>
+            </li>
+            <li class="menu-item {{ request()->is('super-admin/presensi*') ? 'active' : ''}}">
+              <a href="" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-file"></i>
+                <div data-i18n="Presensi Mahasiswa">Presensi Mahasiswa</div>
+              </a>
+            </li>
+            <li class="menu-item {{ request()->is('super-admin/logbook*') ? 'active' : ''}}">
+              <a href="/super-admin/logbook" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-book"></i>
+                <div data-i18n="Logbook Mahasiswa">Logbook Mahasiswa</div>
+              </a>
+            </li>
+            <li class="menu-item {{ request()->is('super-admin/master*') ? 'active open' : ''}}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-database"></i>
+                    <div data-i18n="Master Data">Master Data</div>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item {{ request()->is('super-admin/master-universitas*') ? 'active' : ''}}">
+                        <a href="/super-admin/master-universitas" class="menu-link">
+                        <div data-i18n="Universitas/SMA/SMK">Universitas/SMA/SMK</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-sub">
+                    <li class="menu-item {{ request()->is('super-admin/master-jurusan*') ? 'active' : ''}}">
+                        <a href="/super-admin/master-jurusan" class="menu-link">
+                        <div data-i18n="Jurusan">Jurusan</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-sub">
+                    <li class="menu-item {{ request()->is('super-admin/master-mahasiswa*') ? 'active' : ''}}">
+                        <a href="/super-admin/master-mahasiswa" class="menu-link">
+                        <div data-i18n="Mahasiswa">Mahasiswa</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-sub">
+                    <li class="menu-item {{ request()->is('super-admin/master-masa-magang*') ? 'active' : ''}}">
+                        <a href="/super-admin/master-masa-magang" class="menu-link">
+                        <div data-i18n="Masa Magang">Masa Magang</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="menu-item {{ request()->is('super-admin/data-pegawai*') ? 'active' : ''}}">
+              <a href="/super-admin/data-pegawai" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-users"></i>
+                <div data-i18n="Data Pegawai">Data Pegawai</div>
+              </a>
+            </li>
+            @endcan
           </ul>
         </aside>
         <!-- / Menu -->

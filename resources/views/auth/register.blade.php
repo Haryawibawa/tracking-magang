@@ -16,7 +16,7 @@
             <h4 class="mb-1 pt-2">Sign-Up</h4>
             <p class="mb-4">Make your app management easy and fun!</p>
 
-            <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
+            <form  class="mb-3" action="{{ route('login') }}" method="POST">
              @csrf
                 <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
@@ -56,7 +56,7 @@
                   </label>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary d-grid w-100">Sign up</button>
+              <button type="submit" class="btn btn-danger d-grid w-100">Sign up</button>
             </form>
 
             <p class="text-center">

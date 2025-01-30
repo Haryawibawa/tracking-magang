@@ -1,5 +1,8 @@
 @extends('layouts.auth')
-
+@section('page_style')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="stylesheet" href="{{url('assets/vendor/libs/sweetalert2/sweetalert2.css')}}" />
+@endsection
 @section('content')
   <!-- / Content -->
 <div class="container-xxl">
@@ -17,9 +20,9 @@
             <h4 class="mb-1 pt-2">Welcome to Rektorat Intern!</h4>
             <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
-            <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
+            <form id="" class="default-form mb-3" action="{{ route('login') }}" method="POST">
             @csrf
-              <div class="mb-3">
+              <div class="mb-3 form-input">
                 <label for="email" class="form-label">Email</label>
                 <input
                   type="text"
@@ -31,8 +34,9 @@
                   autocomplete="email"
                   autofocus
                 />
+                <div class="invalid-feedback"></div>
               </div>
-              <div class="mb-3 form-password-toggle">
+              <div class="mb-3 form-password-toggle form-input">
                 <div class="d-flex justify-content-between">
                   <label class="form-label" for="password">Password</label>
                 </div>
@@ -48,6 +52,7 @@
                   />
                   <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
                 </div>
+                <div class="invalid-feedback"></div>
               </div>
               <div class="mb-3">
                 <div class="form-check">
@@ -56,7 +61,7 @@
                 </div>
               </div>
               <div class="mb-3">
-                <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                <button class="btn btn-danger d-grid w-100" type="submit">Sign in</button>
               </div>
             </form>
 
@@ -74,4 +79,8 @@
   </div>
 
   <!-- / Content -->
+@endsection
+@section('page_script')
+<script src="{{url('assets/vendor/libs/sweetalert2/sweetalert2.js')}}"></script>
+<script src="{{url('assets/js/extended-ui-sweetalert2.js')}}"></script>
 @endsection
