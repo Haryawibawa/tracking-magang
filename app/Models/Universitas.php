@@ -13,10 +13,9 @@ class Universitas extends Model
     protected $table = 'universitas';
     protected $fillable = [
         'namauniv',
-        'kategori',
         'status'
     ];
     protected $keyType = 'string';
     protected $primaryKey = 'id_univ';
-    public $timestamps = false;
+    public $timestamps = true;
 }

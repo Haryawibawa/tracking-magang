@@ -34,17 +34,17 @@ Route::middleware('auth')->group(function () {
         Route::prefix('logbook-mhs')->group(function () {
             Route::get('/', [App\Http\Controllers\LogbookController::class, 'index'])->name('super.logbook.index');
             Route::get('/show', [App\Http\Controllers\LogbookController::class, 'show'])->name('super.logbook.show');
-            Route::post('/approve{id}', [App\Http\Controllers\LogbookController::class, 'approve'])->name('super.logbook.approve');
-            Route::post('/rejected{id}', [App\Http\Controllers\LogbookController::class, 'rejected'])->name('super.logbook.rejected');
+            Route::post('/approve/{id}', [App\Http\Controllers\LogbookController::class, 'approve'])->name('super.logbook.approve');
+            Route::post('/rejected/{id}', [App\Http\Controllers\LogbookController::class, 'rejected'])->name('super.logbook.rejected');
         });
         Route::prefix('universitas')->group(function () {
             Route::get('/', [App\Http\Controllers\UniversitasController::class, 'index'])->name('super.univ.index');
             Route::get('/show', [App\Http\Controllers\UniversitasController::class, 'show'])->name('super.univ.show');
-            Route::get('/store', [App\Http\Controllers\UniversitasController::class, 'store'])->name('super.univ.store');
-            Route::get('/edit{id}', [App\Http\Controllers\UniversitasController::class, 'edit'])->name('super.univ.edit');
-            Route::post('/update{id}', [App\Http\Controllers\UniversitasController::class, 'update'])->name('super.univ.update');
-            Route::post('/status{id}', [App\Http\Controllers\UniversitasController::class, 'status'])->name('super.univ.status');
-            Route::delete('/destroy{id}', [App\Http\Controllers\UniversitasController::class, 'delete'])->name('super.univ.delete');
+            Route::post('/store', [App\Http\Controllers\UniversitasController::class, 'store'])->name('super.univ.store');
+            Route::get('/edit/{id}', [App\Http\Controllers\UniversitasController::class, 'edit'])->name('super.univ.edit');
+            Route::post('/update/{id}', [App\Http\Controllers\UniversitasController::class, 'update'])->name('super.univ.update');
+            Route::post('/status/{id}', [App\Http\Controllers\UniversitasController::class, 'status'])->name('super.univ.status');
+            Route::delete('/destroy/{id}', [App\Http\Controllers\UniversitasController::class, 'delete'])->name('super.univ.delete');
         });
         Route::prefix('fakultas')->group(function () {
             Route::get('/', [App\Http\Controllers\FakultasController::class, 'index'])->name('super.fakultas.index');
