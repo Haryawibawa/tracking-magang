@@ -49,48 +49,49 @@ Route::middleware('auth')->group(function () {
         Route::prefix('fakultas')->group(function () {
             Route::get('/', [App\Http\Controllers\FakultasController::class, 'index'])->name('super.fakultas.index');
             Route::get('/show', [App\Http\Controllers\FakultasController::class, 'show'])->name('super.fakultas.show');
-            Route::get('/store', [App\Http\Controllers\FakultasController::class, 'store'])->name('super.fakultas.store');
-            Route::get('/edit{id}', [App\Http\Controllers\FakultasController::class, 'edit'])->name('super.fakultas.edit');
-            Route::post('/update{id}', [App\Http\Controllers\FakultasController::class, 'update'])->name('super.fakultas.update');
-            Route::post('/status{id}', [App\Http\Controllers\FakultasController::class, 'status'])->name('super.fakultas.status');
-            Route::delete('/destroy{id}', [App\Http\Controllers\FakultasController::class, 'delete'])->name('super.fakultas.delete');
+            Route::post('/store', [App\Http\Controllers\FakultasController::class, 'store'])->name('super.fakultas.store');
+            Route::get('/edit/{id}', [App\Http\Controllers\FakultasController::class, 'edit'])->name('super.fakultas.edit');
+            Route::post('/update/{id}', [App\Http\Controllers\FakultasController::class, 'update'])->name('super.fakultas.update');
+            Route::post('/status/{id}', [App\Http\Controllers\FakultasController::class, 'status'])->name('super.fakultas.status');
+            Route::delete('/destroy/{id}', [App\Http\Controllers\FakultasController::class, 'delete'])->name('super.fakultas.delete');
         });
 
         Route::prefix('prodi')->group(function () {
             Route::get('/', [App\Http\Controllers\ProdiController::class, 'index'])->name('super.prodi.index');
             Route::get('/show', [App\Http\Controllers\ProdiController::class, 'show'])->name('super.prodi.show');
-            Route::get('/store', [App\Http\Controllers\ProdiController::class, 'store'])->name('super.prodi.store');
-            Route::get('/edit{id}', [App\Http\Controllers\ProdiController::class, 'edit'])->name('super.prodi.edit');
-            Route::post('/update{id}', [App\Http\Controllers\ProdiController::class, 'update'])->name('super.prodi.update');
-            Route::post('/status{id}', [App\Http\Controllers\ProdiController::class, 'status'])->name('super.prodi.status');
-            Route::delete('/destroy{id}', [App\Http\Controllers\ProdiController::class, 'delete'])->name('super.prodi.delete');
+            Route::post('/store', [App\Http\Controllers\ProdiController::class, 'store'])->name('super.prodi.store');
+            Route::get('/edit/{id}', [App\Http\Controllers\ProdiController::class, 'edit'])->name('super.prodi.edit');
+            Route::post('/update/{id}', [App\Http\Controllers\ProdiController::class, 'update'])->name('super.prodi.update');
+            Route::post('/status/{id}', [App\Http\Controllers\ProdiController::class, 'status'])->name('super.prodi.status');
+            Route::delete('/destroy/{id}', [App\Http\Controllers\ProdiController::class, 'delete'])->name('super.prodi.delete');
         });
+        
         Route::prefix('mahasiswa')->group(function () {
             Route::get('/', [App\Http\Controllers\MahasiswaController::class, 'index'])->name('super.mhs.index');
             Route::get('/show', [App\Http\Controllers\MahasiswaController::class, 'show'])->name('super.mhs.show');
             Route::get('/store', [App\Http\Controllers\MahasiswaController::class, 'store'])->name('super.mhs.store');
-            Route::get('/edit{id}', [App\Http\Controllers\MahasiswaController::class, 'edit'])->name('super.mhs.edit');
-            Route::post('/update{id}', [App\Http\Controllers\MahasiswaController::class, 'update'])->name('super.mhs.update');
-            Route::post('/status{id}', [App\Http\Controllers\MahasiswaController::class, 'status'])->name('super.mhs.status');
+            Route::get('/edit/{id}', [App\Http\Controllers\MahasiswaController::class, 'edit'])->name('super.mhs.edit');
+            Route::post('/update/{id}', [App\Http\Controllers\MahasiswaController::class, 'update'])->name('super.mhs.update');
+            Route::post('/status/{id}', [App\Http\Controllers\MahasiswaController::class, 'status'])->name('super.mhs.status');
         });
 
         Route::prefix('masa-magang')->group(function () {
             Route::get('/', [App\Http\Controllers\MasaMagangController::class, 'index'])->name('super.masa.index');
             Route::get('/show', [App\Http\Controllers\MasaMagangController::class, 'show'])->name('super.masa.show');
             Route::get('/store', [App\Http\Controllers\MasaMagangController::class, 'store'])->name('super.masa.store');
-            Route::get('/edit{id}', [App\Http\Controllers\MasaMagangController::class, 'edit'])->name('super.masa.edit');
-            Route::post('/update{id}', [App\Http\Controllers\MasaMagangController::class, 'update'])->name('super.masa.update');
-            Route::post('/status{id}', [App\Http\Controllers\MasaMagangController::class, 'status'])->name('super.masa.status');
-            Route::delete('/destroy{id}', [App\Http\Controllers\MasaMagangController::class, 'delete'])->name('super.masa.delete');
+            Route::get('/edit/{id}', [App\Http\Controllers\MasaMagangController::class, 'edit'])->name('super.masa.edit');
+            Route::post('/update/{id}', [App\Http\Controllers\MasaMagangController::class, 'update'])->name('super.masa.update');
+            Route::post('/status/{id}', [App\Http\Controllers\MasaMagangController::class, 'status'])->name('super.masa.status');
+            Route::delete('/destroy/{id}', [App\Http\Controllers\MasaMagangController::class, 'delete'])->name('super.masa.delete');
         });
 
         Route::prefix('pegawai')->group(function () {
             Route::get('/', [App\Http\Controllers\PegawaiController::class, 'index'])->name('super.pegawai.index');
             Route::get('/show', [App\Http\Controllers\PegawaiController::class, 'show'])->name('super.pegawai.show');
             Route::get('/store', [App\Http\Controllers\PegawaiController::class, 'store'])->name('super.pegawai.store');
-            Route::get('/edit{id}', [App\Http\Controllers\PegawaiController::class, 'edit'])->name('super.pegawai.edit');
-            Route::post('/update{id}', [App\Http\Controllers\PegawaiController::class, 'update'])->name('super.pegawai.update');
-            Route::post('/status{id}', [App\Http\Controllers\PegawaiController::class, 'status'])->name('super.pegawai.status');
+            Route::get('/edit/{id}', [App\Http\Controllers\PegawaiController::class, 'edit'])->name('super.pegawai.edit');
+            Route::post('/update/{id}', [App\Http\Controllers\PegawaiController::class, 'update'])->name('super.pegawai.update');
+            Route::post('/status/{id}', [App\Http\Controllers\PegawaiController::class, 'status'])->name('super.pegawai.status');
         });
     });
 

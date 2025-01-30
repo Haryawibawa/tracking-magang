@@ -18,5 +18,6 @@ class Prodi extends Model
     protected $keyType = 'string';
     protected $primaryKey = 'id_jurusan';
     public $timestamps = true;
+    
 
 }
