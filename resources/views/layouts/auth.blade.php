@@ -59,6 +59,21 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../../assets/js/config.js"></script>
 </head>
+<style>
+  
+.auth-background {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  background: url('/background/telkom_university_cover.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(5px); /* Efek blur */
+  z-index: -1; /* Menempatkan gambar di belakang konten */
+
+}
+</style>
   @yield('page_style')
 
 <body>

@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="{{url('assets/vendor/libs/sweetalert2/sweetalert2.css')}}" />
 @endsection
 @section('content')
-  <!-- / Content -->
+<div class="auth-background"></div>
+<!-- / Content -->
 <div class="container-xxl">
     <div class="authentication-wrapper authentication-basic container-p-y">
       <div class="authentication-inner py-4">
@@ -77,7 +78,6 @@
       </div>
     </div>
   </div>
-
   <!-- / Content -->
 @endsection
 @section('page_script')
