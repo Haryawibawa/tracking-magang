@@ -1,4 +1,4 @@
 @extends('vue.template')
 @section('content')
-jurusan
+fakultas
 @endsection

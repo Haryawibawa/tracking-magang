@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class UniversitasController extends Controller
 {
     public function index(){
-        return view ('');
+        return view ('admin.universitas');
     }
        
     public function show(){

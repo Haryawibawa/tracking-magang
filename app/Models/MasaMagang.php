@@ -7,23 +7,21 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Supervisi extends Model
+class MasaMagang extends Model
 {
     use HasFactory, HasUuids, AuthenticableTrait;
-    protected $table = 'supervisi';
+    protected $table = 'masa_magang';
     protected $fillable = [
-        'nama',
-        'email',
+        'startdate',
+        'enddate',
         'status',
         'nim'
     ];
     protected $keyType = 'string';
-    protected $primaryKey = 'id_spv';
+    protected $primaryKey = 'id_masa_magang';
+    public $timestamps = true;
 
-    public function spv(){
-        return $this->belongsTo(User::class, 'id_spv');
-    }
     public function mahasiswa(){
-        return $this->belongsTo(Mahasiswa::class, 'id_spv');
+        return $this->belongsTo(Mahasiswa::class, 'nim');
     }
 }

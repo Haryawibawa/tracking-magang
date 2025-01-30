@@ -276,7 +276,7 @@
                 <div data-i18n="Logbook Mahasiswa">Logbook Mahasiswa</div>
               </a>
             </li>
-            <li class="menu-item {{ request()->is('master-data*') ? 'active open' : ''}}">
+            <li class="menu-item {{ request()->is('universitas*') || request()->is('prodi*') || request()->is('mahasiswa*') || request()->is('fakultas*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-database"></i>
                     <div data-i18n="Master Data">Master Data</div>
@@ -289,14 +289,21 @@
                     </li>
                 </ul>
                 <ul class="menu-sub">
-                    <li class="menu-item {{ request()->is('jurusan*') ? 'active' : ''}}">
-                        <a href="/jurusan" class="menu-link">
-                        <div data-i18n="Jurusan">Jurusan</div>
+                    <li class="menu-item {{ request()->is('fakultas*') ? 'active' : ''}}">
+                        <a href="/fakultas" class="menu-link">
+                        <div data-i18n="Fakultas">Fakultas</div>
                         </a>
                     </li>
                 </ul>
                 <ul class="menu-sub">
-                    <li class="menu-item {{ request()->is('master-mahasiswa*') ? 'active' : ''}}">
+                    <li class="menu-item {{ request()->is('prodi*') ? 'active' : ''}}">
+                        <a href="/prodi" class="menu-link">
+                        <div data-i18n="Prodi">Prodi</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-sub">
+                    <li class="menu-item {{ request()->is('mahasiswa*') ? 'active' : ''}}">
                         <a href="/mahasiswa" class="menu-link">
                         <div data-i18n="Mahasiswa">Mahasiswa</div>
                         </a>

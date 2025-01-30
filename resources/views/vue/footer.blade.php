@@ -9,8 +9,7 @@
           <script>
             document.write(new Date().getFullYear());
           </script>
-          {{-- , made with ❤️ by <a href="https://pixinvent.com" target="_blank" class="fw-semibold"></a> --}}
-          , made with by <a href="#" target="_blank" class="fw-semibold">Telkom University</a>
+           by <a href="#" target="_blank" class="fw-semibold">Telkom University</a>
         </div>
       </div>
     </div>

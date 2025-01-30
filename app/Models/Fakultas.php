@@ -6,24 +6,15 @@ use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-class Supervisi extends Model
+class Fakultas extends Model
 {
     use HasFactory, HasUuids, AuthenticableTrait;
-    protected $table = 'supervisi';
+    protected $table = 'fakultas';
     protected $fillable = [
-        'nama',
-        'email',
-        'status',
-        'nim'
+        'fakultas',
+        'status'
     ];
     protected $keyType = 'string';
-    protected $primaryKey = 'id_spv';
-
-    public function spv(){
-        return $this->belongsTo(User::class, 'id_spv');
-    }
-    public function mahasiswa(){
-        return $this->belongsTo(Mahasiswa::class, 'id_spv');
-    }
+    protected $primaryKey = 'id_fakultas';
+    public $timestamps = true;
 }
