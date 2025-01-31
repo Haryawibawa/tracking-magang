@@ -19,7 +19,7 @@
 <div class="row">
     <div class="col-md-8 col-12">
         <h4 class="fw-bold text-sm"><span class="text-muted fw-light text-xs"></span>
-            Data Pegawai
+            List Mahasiswa Bimbingan
         </h4>
     </div>
     <div class="col-md-2 col-12 mb-3 ps-5 d-flex justify-content-between">
@@ -33,16 +33,17 @@
         <div class="tab-content mt-4">
             <div class="tab-pane fade show active" id="navs-pills-justified-users" role="tabpanel">
                 <div class="card-datatable table-responsive">
-                    <table class="table" id="table-master-pegawai">
+                    <table class="table" id="table-detail-mhs-bbg">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Pegawai</th>
+                                <th>Nama Mahasiswa</th>
                                 <th>Email</th>
-                                <th>Jabatan</th>
-                                <th>Mahasiswa Bimbingan</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
+                                <th>Jurusan</th>
+                                <th>Fakultas</th>
+                                <th>Universitas</th>
+                                {{-- <th>Status</th> --}}
+                                {{-- <th>Aksi</th> --}}
                             </tr>
                         </thead>
                     </table>
@@ -51,7 +52,7 @@
         </div>
     </div>
 </div>
-{{-- modal edit --}}
+{{-- modal edit
 <div class="modal fade" id="modal-master-pegawai" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -110,9 +111,9 @@
             </form>
         </div>
     </div>
-</div>
+</div> --}}
 {{-- Modal Alert --}}
-<div class="modal fade" id="modalalert" tabindex="-1" aria-hidden="true">
+{{-- <div class="modal fade" id="modalalert" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -131,7 +132,7 @@
 
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
 
 @section('page_script')
@@ -139,9 +140,9 @@
 <script src="{{url('assets/js/forms-extras.js')}}"></script>
 <script>
 
-    var table = $('#table-master-pegawai').DataTable({
-        // "data": jsonData,
-        ajax: '{{ route("super.pegawai.show")}}',
+    var spv = '{{ $spv->id_spv }}'; // Ambil id_spv dari view
+    var table = $('#table-detail-mhs-bbg').DataTable({
+        ajax: `/pegawai/detail-show/${spv}`,
         serverSide: false,
         processing: true,
         deferRender: true,
@@ -152,52 +153,52 @@
                 data: 'DT_RowIndex'
             },
             {
-                data: "nama",
-                name: "nama"
+                data: "namamhs",
+                name: "namamhs"
             },
             {
-                data: "email",
-                name: "email"
+                data: "emailmhs",
+                name: "emailmhs"
             },
             {
-                data: "pangkat",
-                name: "pangkat"
+                data: "jurusan.jurusan",
+                name: "jurusan"
             },
             {
-                data: "detail",
-                name: "detail"
+                data: "fakultas.fakultas",
+                name: "fakultas"
             },
             {
-                data: "status",
-                name: "status"
+                data: "univ.namauniv",
+                name: "namauniv"
             },
-            {
-                data: 'action',
-                name: 'action'
-            }
+            // {
+            //     data: 'action',
+            //     name: 'action'
+            // }
 
         ]
     });
 
-    function edit(e) {
-        let id = e.attr('data-id');
-        let action = `{{ url('pegawai/update') }}/${id}`;
-        var url = `{{ url('pegawai/edit') }}/${id}`;
+    // function edit(e) {
+    //     let id = e.attr('data-id');
+    //     let action = `{{ url('pegawai/update') }}/${id}`;
+    //     var url = `{{ url('pegawai/edit') }}/${id}`;
 
-        $.ajax({
-            type: 'GET',
-            url: url,
-            success: function(response) {
-                $("#modal-title").html("Edit Data Pegawai");
-                $("#modal-button").html("Update Data");
-                $('#modal-master-pegawai form').attr('action', action);
-                $('#nama').val(response.nama);
-                $('#email').val(response.email);
-                $('#pangkat').val(response.pangkat);
-                $('#modal-master-pegawai').modal('show');
-            }
-        });
-    }
+    //     $.ajax({
+    //         type: 'GET',
+    //         url: url,
+    //         success: function(response) {
+    //             $("#modal-title").html("Edit Data Pegawai");
+    //             $("#modal-button").html("Update Data");
+    //             $('#modal-master-pegawai form').attr('action', action);
+    //             $('#nama').val(response.nama);
+    //             $('#email').val(response.email);
+    //             $('#pangkat').val(response.pangkat);
+    //             $('#modal-master-pegawai').modal('show');
+    //         }
+    //     });
+    // }
 
     jQuery(function() {
         jQuery('.showSingle').click(function() {

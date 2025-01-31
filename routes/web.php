@@ -91,6 +91,8 @@ Route::middleware('auth')->group(function () {
             Route::post('/store', [App\Http\Controllers\PegawaiController::class, 'store'])->name('super.pegawai.store');
             Route::get('/edit/{id}', [App\Http\Controllers\PegawaiController::class, 'edit'])->name('super.pegawai.edit');
             Route::post('/update/{id}', [App\Http\Controllers\PegawaiController::class, 'update'])->name('super.pegawai.update');
+            Route::get('/detail/{id}', [App\Http\Controllers\PegawaiController::class, 'detail'])->name('super.pegawai.detail');
+            Route::get('/detail-show/{id}', [App\Http\Controllers\PegawaiController::class, 'detailShow'])->name('super.pegawai.detail.show');
             Route::post('/status/{id}', [App\Http\Controllers\PegawaiController::class, 'status'])->name('super.pegawai.status');
         });
     });

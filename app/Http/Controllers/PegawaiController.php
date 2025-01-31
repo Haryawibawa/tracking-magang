@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PegawaiRequest;
+use App\Models\Mahasiswa;
 use App\Models\Supervisi;
 use App\Models\User;
 use Exception;
@@ -17,8 +18,8 @@ class PegawaiController extends Controller
     }
 
     public function show(){
-        $univ = Supervisi::orderBy('created_at', 'asc')->get();
-        return DataTables::of($univ)
+        $pegawai = Supervisi::orderBy('created_at', 'asc')->get();
+        return DataTables::of($pegawai)
         ->addIndexColumn()
         ->editColumn('status', function ($row) {
             if ($row->status == 1) {
@@ -26,6 +27,11 @@ class PegawaiController extends Controller
             } else {
                 return "<div class='text-center'><div class='badge rounded-pill bg-label-danger'>" . "Inactive" . "</div></div>";
             }
+        })
+        ->editColumn('detail', function ($row) {
+            $btn =
+            "<a href='/pegawai/detail/$row->id_spv' data-id='{$row->id_spv}' class='btn-icon text-success waves-effect waves-light'><i class='tf-icons ti ti-user' ></i></a>";
+            return $btn;
         })
         ->addColumn('action', function ($row) {
             $icon = ($row->status) ? "ti-circle-x" : "ti-circle-check";
@@ -35,7 +41,7 @@ class PegawaiController extends Controller
             <a data-status='{$row->status}' data-id='{$row->id_spv}' data-url='pegawai/status' class='btn-icon update-status text-{$color} waves-effect waves-light'><i class='tf-icons ti {$icon}'></i></a>";
             return $btn;
         })
-        ->rawColumns(['action', 'status'])
+        ->rawColumns(['action', 'status', 'detail'])
 
         ->make(true);
     }
@@ -123,4 +129,24 @@ class PegawaiController extends Controller
             ]);
         }
     }
+
+    public function detail($id)  {
+        $spv = Supervisi::where('id_spv', $id)->first();
+        return view('admin.detail-mhs-bbg', compact('spv'));
+    }
+
+    public function detailShow(Request $request, $id) {
+        $mahasiswa = Mahasiswa::where('id_spv', $id)->with('jurusan', 'univ', 'fakultas')->orderBy('created_at', 'asc')->get();
+        return DataTables::of($mahasiswa)
+        ->addIndexColumn()
+        ->addColumn('action', function ($row) {
+
+            $btn = "<a data-bs-toggle='modal' data-id='{$row->id_spv}' onclick=edit($(this)) class='btn-icon text-warning waves-effect waves-light'><i class='tf-icons ti ti-edit'></i>";
+            return $btn;
+        })
+        ->rawColumns(['action',])
+
+        ->make(true);
+    }
+
 }
