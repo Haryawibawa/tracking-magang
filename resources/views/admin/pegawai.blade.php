@@ -56,7 +56,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header text-center d-block">
-                <h5 class="modal-title" id="modal-title">Tambah pegawai</h5>
+                <h5 class="modal-title" id="modal-title">Tambah Data</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form class="default-form" method="POST" enctype="multipart/form-data" action="{{ route('super.pegawai.store') }}">
@@ -119,7 +119,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-                <img src="../../app-assets/img/alert.png" alt="">
+                <img src="../../assets/img/alert.png" alt="">
                 <h5 class="modal-title" id="modal-title">Apakah anda yakin ingin menonaktifkan pegawai</h5>
                 <div class="swal2-html-container" id="swal2-html-container" style="display: block;">
                     Data yang dipilih akan non-aktif</div>

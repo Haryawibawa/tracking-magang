@@ -23,7 +23,7 @@
     <div class="col-md-2 col-12 mb-3 ps-5 d-flex justify-content-between">
     </div>
     <div class="col-md-2 col-12 text-end">
-        <button class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#modal-master-universitas">Add Universitas</button>
+        <button class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#modal-master-universitas">Tambah Universitas</button>
     </div>
 </div>
 <div class="col-xl-12">
@@ -80,7 +80,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-                <img src="../../app-assets/img/alert.png" alt="">
+                <img src="../../assets/img/alert.png" alt="">
                 <h5 class="modal-title" id="modal-title">Apakah anda yakin ingin menonaktifkan universitas</h5>
                 <div class="swal2-html-container" id="swal2-html-container" style="display: block;">
                     Data yang dipilih akan non-aktif</div>

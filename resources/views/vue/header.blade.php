@@ -199,57 +199,34 @@
                 <div data-i18n="Dashboard">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item {{ request()->is('/presensi*') ? 'active' : ''}}">
-              <a href="/presensi" class="menu-link">
+            <li class="menu-item {{ request()->is('/spv-presensi-mhs*') ? 'active' : ''}}">
+              <a href="/spv-presensi-mhs" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-file"></i>
-                <div data-i18n="Presensi Mahasiswa">Presensi Mahasiswa</div>
+                <div data-i18n="Presensi ">Presensi </div>
               </a>
             </li>
-            <li class="menu-item {{ request()->is('/logbook*') ? 'active' : ''}}">
-              <a href="/logbook" class="menu-link">
+            <li class="menu-item {{ request()->is('/spv-logbook-mhs*') ? 'active' : ''}}">
+              <a href="/spv-logbook-mhs" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-book"></i>
-                <div data-i18n="Logbook Mahasiswa">Logbook Mahasiswa</div>
+                <div data-i18n="Logbook">Logbook</div>
               </a>
             </li>
-            <li class="menu-item {{ request()->is('/master*') ? 'active open' : ''}}">
-                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons ti ti-database"></i>
-                    <div data-i18n="Master Data">Master Data</div>
-                </a>
-                <ul class="menu-sub">
-                    <li class="menu-item {{ request()->is('/master-universitas*') ? 'active' : ''}}">
-                        <a href="/master-universitas" class="menu-link">
-                        <div data-i18n="Universitas/SMA/SMK">Universitas/SMA/SMK</div>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="menu-sub">
-                    <li class="menu-item {{ request()->is('/master-jurusan*') ? 'active' : ''}}">
-                        <a href="/master-jurusan" class="menu-link">
-                        <div data-i18n="Jurusan">Jurusan</div>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="menu-sub">
-                    <li class="menu-item {{ request()->is('/master-mahasiswa*') ? 'active' : ''}}">
-                        <a href="/master-mahasiswa" class="menu-link">
-                        <div data-i18n="Mahasiswa">Mahasiswa</div>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="menu-sub">
-                    <li class="menu-item {{ request()->is('/master-masa-magang*') ? 'active' : ''}}">
-                        <a href="/master-masa-magang" class="menu-link">
-                        <div data-i18n="Masa Magang">Masa Magang</div>
-                        </a>
-                    </li>
-                </ul>
+            <li class="menu-item {{ request()->is('/spv-mhs-bimbingan*') ? 'active' : ''}}">
+              <a href="/spv-mhs-bimbingan" class="menu-link">
+              <i class="menu-icon tf-icons ti ti-users"></i>
+              <div data-i18n="Mahasiswa Bimbingan">Mahasiswa Bimbingan</div>
+              </a>
             </li>
-            
-            <li class="menu-item {{ request()->is('/data-pegawai*') ? 'active' : ''}}">
-              <a href="/data-pegawai" class="menu-link">
+            <li class="menu-item {{ request()->is('/spv-masa-magang*') ? 'active' : ''}}">
+              <a href="/spv-masa-magang" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-users"></i>
                 <div data-i18n="Data Pegawai">Data Pegawai</div>
+              </a>
+            </li>
+            <li class="menu-item {{ request()->is('/spv-sertifikat*') ? 'active' : ''}}">
+              <a href="/spv-sertifikat" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-users"></i>
+                <div data-i18n="Sertifikat">Sertifikat</div>
               </a>
             </li>
             @endcan

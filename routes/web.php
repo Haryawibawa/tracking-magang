@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [App\Http\Controllers\PresensiMhsController::class, 'index'])->name('super.presensi.index');
             Route::get('/show', [App\Http\Controllers\PresensiMhsController::class, 'show'])->name('super.presensi.show');
             Route::get('/detail/{id}', [App\Http\Controllers\PresensiMhsController::class, 'detail'])->name('super.presensi.detail');
+            Route::get('/show-detail/{id}', [App\Http\Controllers\PresensiMhsController::class, 'tbldetail'])->name('super.presensi.tbldetail');
         });
         Route::prefix('logbook-mhs')->group(function () {
             Route::get('/', [App\Http\Controllers\LogbookController::class, 'index'])->name('super.logbook.index');
@@ -100,7 +101,37 @@ Route::middleware('auth')->group(function () {
     //supervisor-route
     Route::middleware('can:only.supervisor')->group(function () {
         Route::prefix('spv-presensi-mhs')->group(function () {
-            Route::get('/', [App\Http\Controllers\SpvPresensiMhsController::class, 'index'])->name('spv.presensi');
+            Route::get('/', [App\Http\Controllers\SpvPresensiMhsController::class, 'index'])->name('spv.presensi.index');
+            Route::get('/show', [App\Http\Controllers\SpvPresensiMhsController::class, 'show'])->name('spv.presensi.show');
+            Route::get('/detail/{id}', [App\Http\Controllers\SpvPresensiMhsController::class, 'view'])->name('spv.presensi.detail');
+            Route::get('/show2/{id}', [App\Http\Controllers\SpvPresensiMhsController::class, 'detail'])->name('spv.presensi.show2');
+        });
+
+        Route::prefix('/spv-logbook-mhs')->group(function () {
+            Route::get('/', [App\Http\Controllers\SpvLogbookController::class, 'index'])->name('spv.logbook.index');
+            Route::get('/show', [App\Http\Controllers\SpvLogbookController::class, 'show'])->name('spv.logbook.show');
+            Route::post('/approve/{id}', [App\Http\Controllers\SpvLogbookController::class, 'approve'])->name('spv.approve');
+            Route::post('/tolak/{id}', [App\Http\Controllers\SpvLogbookController::class, 'rejected'])->name('spv.rejected');
+        });
+
+        Route::prefix('/spv-mhs-bimbingan')->group(function () {
+            Route::get('/', [App\Http\Controllers\SpvMahasiswaBimbinganController::class, 'index'])->name('spv.mahasiswa.index');
+            Route::get('/show', [App\Http\Controllers\SpvMahasiswaBimbinganController::class, 'show'])->name('spv.mahasiswa.show');
+            Route::get('/show-detail/{id}', [App\Http\Controllers\SpvMahasiswaBimbinganController::class, 'view'])->name('spv.mahasiswa.show');
+            Route::post('/update/{id}', [App\Http\Controllers\SpvMahasiswaBimbinganController::class, 'update'])->name('spv.mahasiswa.update');
+            Route::post('/status/{id}', [App\Http\Controllers\SpvMahasiswaBimbinganController::class, 'status'])->name('spv.mahasiswa.status');
+        });
+    
+        Route::prefix('/spv-masa-magang')->group(function () {
+            Route::get('/', [App\Http\Controllers\SpvMahasiswaBimbinganController::class, 'index'])->name('spv.masa.index');
+            Route::get('/show', [App\Http\Controllers\SpvMahasiswaBimbinganController::class, 'show'])->name('spv.masa.show');
+            Route::get('/show-detail/{id}', [App\Http\Controllers\SpvMahasiswaBimbinganController::class, 'view'])->name('spv.masa.show');
+            Route::post('/update/{id}', [App\Http\Controllers\SpvMahasiswaBimbinganController::class, 'update'])->name('spv.masa.update');
+            Route::post('/status/{id}', [App\Http\Controllers\SpvMahasiswaBimbinganController::class, 'status'])->name('spv.masa.status');
+        });
+
+        Route::prefix('/spv-sertifikat')->group(function () {
+            Route::get('/', [App\Http\Controllers\SpvSertifikatController::class, 'index'])->name('spv.Sertifikat.index');
         });
     });
 
@@ -110,6 +141,5 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [App\Http\Controllers\PresensiController::class, 'index'])->name('mhs.presensi');
         });
     });
-
 });
 

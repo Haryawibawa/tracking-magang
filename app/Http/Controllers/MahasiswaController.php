@@ -24,7 +24,7 @@ class MahasiswaController extends Controller
 
     public function show(){
 
-        $mahasiswa = Mahasiswa::with('univ', 'jurusan', 'fakultas', 'nim')->orderBy('nim', 'asc')->get();
+        $mahasiswa = Mahasiswa::with('univ', 'jurusan', 'fakultas')->orderBy('created_at', 'asc')->get();
         return DataTables::of($mahasiswa)
         ->addIndexColumn()
         ->editColumn('status', function ($row) {

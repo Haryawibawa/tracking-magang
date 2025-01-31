@@ -39,7 +39,7 @@
                                 <th>NOMOR</th>
                                 <th style="min-width: 125px;">Nama Mahasiswa</th>
                                 <th>Email</th>
-                                <th>NIM/NISN</th>
+                                <th>NIM</th>
                                 <th>Instansi</th>
                                 <th>Fakultas</th>
                                 <th>Jurusan</th>
@@ -91,10 +91,10 @@
                     </div>
                     <div class="row">
                         <div class="col mb-2 form-input">
-                            <label for="univ" class="form-label">Universitas/Sekolah</label>
+                            <label for="univ" class="form-label">Universitas</label>
                             <select class="form-select select2" id="instansi" name="univ"
                                 data-placeholder="Pilih Universitas">
-                                <option disabled selected>Pilih Universitas/Sekolah</option>
+                                <option disabled selected>Pilih Universitas</option>
                                 @foreach ($univ as $u)
                                     <option value="{{ $u->id_univ }}">{{ $u->namauniv }}</option>
                                 @endforeach
@@ -161,7 +161,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-                <img src="../../app-assets/img/alert.png" alt="">
+                <img src="../../assets/img/alert.png" alt="">
                 <h5 class="modal-title" id="modal-title">Apakah anda yakin ingin menonaktifkan Mahasiswa</h5>
                 <div class="swal2-html-container" id="swal2-html-container" style="display: block;">
                     Data yang dipilih akan non-aktif</div>
