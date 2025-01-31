@@ -152,7 +152,7 @@
     $("#modal-button").html("Simpan")
     $('#modal-master-universitas form')[0].reset();
     $('#modal-master-universitas form #role').val('').trigger('change');
-    $('#modal-master-universitas form').attr('action', "{{ url('super-admin/master-universitas/store') }}");
+    $('#modal-master-universitas form').attr('action', "{{ url('universitas/store') }}");
     $('.invalid-feedback').removeClass('d-block');
     $('.form-control').removeClass('is-invalid');
     });

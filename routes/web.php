@@ -69,7 +69,7 @@ Route::middleware('auth')->group(function () {
         Route::prefix('mahasiswa')->group(function () {
             Route::get('/', [App\Http\Controllers\MahasiswaController::class, 'index'])->name('super.mhs.index');
             Route::get('/show', [App\Http\Controllers\MahasiswaController::class, 'show'])->name('super.mhs.show');
-            Route::get('/store', [App\Http\Controllers\MahasiswaController::class, 'store'])->name('super.mhs.store');
+            Route::post('/store', [App\Http\Controllers\MahasiswaController::class, 'store'])->name('super.mhs.store');
             Route::get('/edit/{id}', [App\Http\Controllers\MahasiswaController::class, 'edit'])->name('super.mhs.edit');
             Route::post('/update/{id}', [App\Http\Controllers\MahasiswaController::class, 'update'])->name('super.mhs.update');
             Route::post('/status/{id}', [App\Http\Controllers\MahasiswaController::class, 'status'])->name('super.mhs.status');
@@ -88,7 +88,7 @@ Route::middleware('auth')->group(function () {
         Route::prefix('pegawai')->group(function () {
             Route::get('/', [App\Http\Controllers\PegawaiController::class, 'index'])->name('super.pegawai.index');
             Route::get('/show', [App\Http\Controllers\PegawaiController::class, 'show'])->name('super.pegawai.show');
-            Route::get('/store', [App\Http\Controllers\PegawaiController::class, 'store'])->name('super.pegawai.store');
+            Route::post('/store', [App\Http\Controllers\PegawaiController::class, 'store'])->name('super.pegawai.store');
             Route::get('/edit/{id}', [App\Http\Controllers\PegawaiController::class, 'edit'])->name('super.pegawai.edit');
             Route::post('/update/{id}', [App\Http\Controllers\PegawaiController::class, 'update'])->name('super.pegawai.update');
             Route::post('/status/{id}', [App\Http\Controllers\PegawaiController::class, 'status'])->name('super.pegawai.status');

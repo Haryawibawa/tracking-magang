@@ -42,11 +42,11 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->hasRole('superadmin')) {
-            return redirect('/super-admin/home');
+            return redirect('/');
         } elseif ($user->hasRole('supervisi')){
-            return redirect('/spv/home');
+            return redirect('/');
         }else{
-            return redirect('/mahasiswa/home');
+            return redirect('/');
         }
     }
 }

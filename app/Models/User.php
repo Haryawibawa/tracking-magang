@@ -22,6 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'nim',
+        'id_spv'
     ];
 
     /**
@@ -43,4 +45,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function mahasiswa(){
+        return $this->hasOne(Mahasiswa::class, 'nim', 'nim');
+    }
+    public function pegawai(){
+        return $this->hasOne(Supervisi::class);
+    }
 }

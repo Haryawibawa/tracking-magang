@@ -15,15 +15,15 @@ class Supervisi extends Model
         'nama',
         'email',
         'status',
-        'nim'
+        'pangkat',
     ];
     protected $keyType = 'string';
     protected $primaryKey = 'id_spv';
 
-    public function spv(){
+    public function pegawai(){
         return $this->belongsTo(User::class, 'id_spv');
     }
-    public function mahasiswa(){
+    public function spv(){
         return $this->belongsTo(Mahasiswa::class, 'id_spv');
     }
 }
