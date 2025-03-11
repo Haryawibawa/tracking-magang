@@ -24,16 +24,13 @@
 
             <form  class="mb-3" action="{{ route('login') }}" method="POST">
              @csrf
-                <div class="mb-3">
+              <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  name="name"
-                  placeholder="Enter your username"
-                  autofocus
-                />
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your username" autofocus />
+              </div>
+              <div class="mb-3">
+                <label for="username" class="form-label">NIM</label>
+                <input type="text" class="form-control" id="nim" nim="name" placeholder="670***" autofocus />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -51,15 +48,6 @@
                     aria-describedby="password"
                   />
                   <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
-                  <label class="form-check-label" for="terms-conditions">
-                    I agree to
-                  </label>
                 </div>
               </div>
               <button type="submit" class="btn btn-danger d-grid w-100">Sign up</button>

@@ -56,13 +56,7 @@
                 <div class="invalid-feedback"></div>
               </div>
               <div class="mb-3">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="remember-me" />
-                  <label class="form-check-label" for="remember-me"> Remember Me </label>
-                </div>
-              </div>
-              <div class="mb-3">
-                <button class="btn btn-danger d-grid w-100" type="submit">Sign in</button>
+                <button class="btn btn-danger d-grid w-100" type="submit">Login</button>
               </div>
             </form>
 
