@@ -30,7 +30,7 @@
               </div>
               <div class="mb-3">
                 <label for="username" class="form-label">NIM</label>
-                <input type="text" class="form-control" id="nim" nim="name" placeholder="670***" autofocus />
+                <input type="text" class="form-control" id="nim" nim="nim" placeholder="670***" autofocus />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
