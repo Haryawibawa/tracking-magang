@@ -50,7 +50,6 @@
 <!-- Main JS -->
 <script src="{{url('assets/js/main.js')}}"></script>
 <script src="{{url('js/content.js')}}"></script>
-{{-- <script src="{{ asset('js/content.js') }}"></script> --}}
 <!-- Page JS -->
 <script src="{{url('assets/js/dashboards-analytics.js')}}"></script>
 <script src="{{ asset('assets/js/form-wizard-numbered.js') }}"></script>

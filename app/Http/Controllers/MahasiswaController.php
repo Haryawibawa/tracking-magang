@@ -55,7 +55,7 @@ class MahasiswaController extends Controller
                 'namamhs' => $request->namamhs,
                 'emailmhs' => $request->emailmhs,
                 'id_jurusan' => $request->jurusan,
-                'id_univ' => $request->univ,
+                // 'id_univ' => $request->univ,
                 'id_fakultas' => $request->fakultas,
                 'status' => 1
             ]);

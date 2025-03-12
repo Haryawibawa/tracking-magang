@@ -21,7 +21,7 @@
         <h4 class="fw-bold text-sm"><span class="text-muted fw-light text-xs"></span>
             List Mahasiswa Bimbingan
         </h4>
-        <div class="btn btn-primary" onclick="history.back()" style="cursor: pointer;">
+        <div class="btn btn-warning" onclick="history.back()" style="cursor: pointer;">
             <span>Kembali</span>
         </div>
     </div>

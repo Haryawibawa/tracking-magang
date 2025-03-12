@@ -26,7 +26,7 @@ class MahasiswaRequest extends FormRequest
             'nim' => ['required', 'string', 'max:255'],
             'jurusan' => ['required'],
             'password' => 'required|min:8',
-            'univ' => ['required'],
+            // 'univ' => ['required'],
             'emailmhs' => 'required|email:rfc,dns',
         ];
     }

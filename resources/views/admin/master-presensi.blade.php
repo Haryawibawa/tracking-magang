@@ -27,7 +27,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th style="min-width: 125px;">Nama</th>
-                                    <th>Universitas</th>
+                                    {{-- <th>Universitas</th> --}}
                                     {{-- <th>Total Presensi</th> --}}
                                     <th>Jurusan</th>
                                     <th>Detail</th>
@@ -61,13 +61,16 @@
                 data: "namamhs",
                 name: "namamhs"
             },
-            {
-                data: "univ.namauniv",
-                name: "namauniv"
-            },
+            // {
+            //     data: "univ.namauniv",
+            //     name: "namauniv"
+            // },
             {
                 data: "jurusan.jurusan",
-                name: "jurusan"
+                name: "jurusan",
+                render: function(data, type, row) {
+                    return data ? data : '-';
+                }
             },
             {
                 data: "detail",

@@ -76,7 +76,7 @@
     <script src="{{url('assets/js/config.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        .bg-menu-theme.menu-vertical .menu-item.active>.menu-link:not(.menu-toggle) {
+         .bg-menu-theme.menu-vertical .menu-item.active>.menu-link:not(.menu-toggle) {
             background: #b6252a !important;
             box-shadow: none !important;
             color: #fff !important;
@@ -91,7 +91,7 @@
         .nav-pills .nav-link.active:hover,
         .nav-pills .nav-link.active:focus {
             background-color: #b6252a;
-            color: #fff;
+            color: #975858;
         }
 
         .nav-pills .nav-link:not(.active):hover,
@@ -99,7 +99,7 @@
             color: #b6252a;
         }
 
-        .btn-primary {
+        .btn-warning {
             background-color: #b6252a;
             border-color: #b6252a;
         }
@@ -119,7 +119,7 @@
         .nav-pills .nav-link.active:hover,
         .nav-pills .nav-link.active:focus {
             background-color: #b6252a;
-            color: #fff;
+            color: #ffffff;
         }
 
         .nav-pills .nav-link:not(.active):hover,
@@ -204,31 +204,31 @@
                 <div data-i18n="Dashboard">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item {{ request()->is('/spv-presensi-mhs*') ? 'active' : ''}}">
+            <li class="menu-item {{ request()->is('spv-presensi-mhs*') ? 'active' : ''}}">
               <a href="/spv-presensi-mhs" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-file"></i>
                 <div data-i18n="Presensi ">Presensi </div>
               </a>
             </li>
-            <li class="menu-item {{ request()->is('/spv-logbook-mhs*') ? 'active' : ''}}">
+            <li class="menu-item {{ request()->is('spv-logbook-mhs*') ? 'active' : ''}}">
               <a href="/spv-logbook-mhs" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-book"></i>
                 <div data-i18n="Logbook">Logbook</div>
               </a>
             </li>
-            <li class="menu-item {{ request()->is('/spv-mhs-bimbingan*') ? 'active' : ''}}">
+            <li class="menu-item {{ request()->is('spv-mhs-bimbingan*') ? 'active' : ''}}">
               <a href="/spv-mhs-bimbingan" class="menu-link">
               <i class="menu-icon tf-icons ti ti-users"></i>
               <div data-i18n="Mahasiswa Bimbingan">Mahasiswa Bimbingan</div>
               </a>
             </li>
-            <li class="menu-item {{ request()->is('/spv-masa-magang*') ? 'active' : ''}}">
+            <li class="menu-item {{ request()->is('spv-masa-magang*') ? 'active' : ''}}">
               <a href="/spv-masa-magang" class="menu-link">
-                <i class="menu-icon tf-icons ti ti-users"></i>
-                <div data-i18n="Data Pegawai">Data Pegawai</div>
+                <i class="menu-icon tf-icons ti ti-calendar"></i>
+                <div data-i18n="Masa Magang">Masa Magang</div>
               </a>
             </li>
-            <li class="menu-item {{ request()->is('/spv-sertifikat*') ? 'active' : ''}}">
+            <li class="menu-item {{ request()->is('spv-sertifikat*') ? 'active' : ''}}">
               <a href="/spv-sertifikat" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-users"></i>
                 <div data-i18n="Sertifikat">Sertifikat</div>
@@ -263,13 +263,13 @@
                     <i class="menu-icon tf-icons ti ti-database"></i>
                     <div data-i18n="Master Data">Master Data</div>
                 </a>
-                <ul class="menu-sub">
+                {{-- <ul class="menu-sub">
                     <li class="menu-item {{ request()->is('universitas*') ? 'active' : ''}}">
                         <a href="/universitas" class="menu-link">
                         <div data-i18n="Universitas">Universitas</div>
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
                 <ul class="menu-sub">
                     <li class="menu-item {{ request()->is('fakultas*') ? 'active' : ''}}">
                         <a href="/fakultas" class="menu-link">
@@ -295,7 +295,7 @@
             
             <li class="menu-item {{ request()->is('masa-magang*') ? 'active' : ''}}">
               <a href="/masa-magang" class="menu-link">
-                <i class="menu-icon tf-icons ti ti-users"></i>
+                <i class="menu-icon tf-icons ti ti-calendar"></i>
                 <div data-i18n="Masa Magang">Masa Magang</div>
               </a>
             </li>
@@ -342,7 +342,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../../assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                      <img src="../../assets/img/avatars/no-image.png" alt class="h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -363,18 +363,6 @@
                     </li>
                     <li>
                       <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="">
-                        <i class="ti ti-user-check me-2 ti-sm"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="ti ti-settings me-2 ti-sm"></i>
-                        <span class="align-middle">Settings</span>
-                      </a>
                     </li>
                     <li>
                       <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal" href="{{ route('logout') }}">
