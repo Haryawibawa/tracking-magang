@@ -40,7 +40,7 @@
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="{{url('assets/vendor/css/rtl/core.css')}}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{url('assets/vendor/css/rtl/theme-default.css')}}" class="template-customizer-theme-css" />
+    {{-- <link rel="stylesheet" href="{{url('assets/vendor/css/rtl/theme-default.css')}}" class="template-customizer-theme-css" /> --}}
     <link rel="stylesheet" href="{{url('assets/css/demo.css')}}" />
 
     <!-- Vendors CSS -->
@@ -81,45 +81,50 @@
             box-shadow: none !important;
             color: #fff !important;
         }
+        
+        .bg-menu-theme.menu-vertical{
+            background-color: #161931 !important;
+            color: #fff !important;
 
+        }
         .nav-pills .nav-link.active,
         .nav-pills .nav-link.active:hover,
         .nav-pills .nav-link.active:focus {
-            background-color: #4EA971;
+            background-color: #b6252a;
             color: #fff;
         }
 
         .nav-pills .nav-link:not(.active):hover,
         .nav-pills .nav-link:not(.active):focus {
-            color: #4EA971;
+            color: #b6252a;
         }
 
-        .btn-success {
-            background-color: #4EA971;
-            border-color: #4EA971;
+        .btn-primary {
+            background-color: #b6252a;
+            border-color: #b6252a;
         }
 
         .form-check-input:checked,
         .form-check-input[type=checkbox]:indeterminate {
-            background-color: #4EA971;
-            border-color: #4EA971;
+            background-color: #b6252a;
+            border-color: #b6252a;
         }
 
         .select2-container--default .select2-results__option--highlighted:not([aria-selected=true]) {
             background-color: rgba(115, 103, 240, 0.08) !important;
-            color: #4EA971 !important;
+            color: #b6252a !important;
         }
 
         .nav-pills .nav-link.active,
         .nav-pills .nav-link.active:hover,
         .nav-pills .nav-link.active:focus {
-            background-color: #4EA971;
+            background-color: #b6252a;
             color: #fff;
         }
 
         .nav-pills .nav-link:not(.active):hover,
         .nav-pills .nav-link:not(.active):focus {
-            color: #4EA971;
+            color: #b6252a;
         }
 
     </style>

@@ -22,37 +22,33 @@
             <h4 class="mb-1 pt-2">Sign-Up</h4>
             <p class="mb-4">Make your app management easy and fun!</p>
 
-            <form  class="mb-3" action="{{ route('login') }}" method="POST">
+            <form  class="mb-3 default-form"  action="{{ url('/signup') }}" method="POST">
              @csrf
-              <div class="mb-3">
+              <div class="mb-3 form-input">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your username" autofocus />
+                <div class="invalid-feedback"></div>
               </div>
-              <div class="mb-3">
+              <div class="mb-3 form-input">
                 <label for="username" class="form-label">NIM</label>
-                <input type="text" class="form-control" id="nim" nim="nim" placeholder="670***" autofocus />
+                <input type="text" class="form-control" id="nim" name="nim" placeholder="670***" autofocus />
+                <div class="invalid-feedback"></div>
               </div>
-              <div class="mb-3">
+              <div class="mb-3 form-input">
                 <label for="email" class="form-label">Email</label>
                 <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
+                <div class="invalid-feedback"></div>
               </div>
-              <div class="mb-3 form-password-toggle">
+              <div class="mb-3 form-password-toggle form-input">
                 <label class="form-label" for="password">Password</label>
                 <div class="input-group input-group-merge">
-                  <input
-                    type="password"
-                    id="password"
-                    class="form-control"
-                    name="password"
-                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                    aria-describedby="password"
-                  />
+                  <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                   <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
                 </div>
+                <div class="invalid-feedback"></div>
               </div>
               <button type="submit" class="btn btn-danger d-grid w-100">Sign up</button>
             </form>
-
             <p class="text-center">
               <span>Already have an account?</span>
               <a href="{{ route('login') }}">
@@ -66,4 +62,8 @@
     </div>
   </div>
   <!-- / Content -->
-  @endsection
+@endsection
+  @section('page_script')
+<script src="{{url('assets/vendor/libs/sweetalert2/sweetalert2.js')}}"></script>
+<script src="{{url('assets/js/extended-ui-sweetalert2.js')}}"></script>
+@endsection

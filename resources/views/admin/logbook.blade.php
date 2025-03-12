@@ -89,7 +89,6 @@
         </div>
     </div>
 </div>
-{{-- @include('admin.modal.modal-konfirmasi') --}}
 @endsection
 @section('page_script')
 <script src="{{url('assets/vendor/libs/jquery-repeater/jquery-repeater.js')}}"></script>

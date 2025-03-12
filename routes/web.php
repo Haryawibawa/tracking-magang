@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
+Route::post('/signup', [SignupController::class, 'store'])->name('sign.store');
+Route::get('/aktivasi', function () { return view('auth.aktivasi'); })->name('aktivasi');
 Auth::routes();
 Route::middleware('auth')->group(function () {
 
