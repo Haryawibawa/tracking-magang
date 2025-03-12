@@ -32,7 +32,7 @@ class SignupController extends Controller
                 'password' => Hash::make($request['password']),
                 'nim' => $mahasiswa->nim
             ]);
-            $user->assignRole('supervisi');
+            $user->assignRole('mahasiswa');
             DB::commit();
             return response()->json([
                 'error' => false,
